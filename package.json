@@ -19,6 +19,8 @@
     "@vue/cli-plugin-unit-jest": "^4.5.3",
     "@vue/cli-service": "^4.5.0",
     "@vue/test-utils": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3",
     "vue-template-compiler": "^2.6.11"
   }
 }
