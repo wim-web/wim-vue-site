@@ -11,6 +11,6 @@
 <style scoped lang="scss">
     .round {
         border-radius: 50%;
-        border: 3px black solid;
+        border: 3px $primary solid;
     }
 </style>
