@@ -32,6 +32,7 @@
     .link-button-list {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         
         &__item {
             margin-right: 20px;
