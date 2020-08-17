@@ -1,5 +1,5 @@
 <template>
-    <div>about</div>
+    <div class="prepare">じゅんびちゅう...</div>
 </template>
 
 <script>
@@ -9,5 +9,7 @@
 </script>
 
 <style scoped>
-
+    .prepare {
+        text-align: center;
+    }
 </style>
