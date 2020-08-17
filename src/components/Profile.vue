@@ -24,5 +24,6 @@
     .avatar-size {
         height: 200px;
         width: 200px;
+        margin-bottom: 10px;
     }
 </style>
