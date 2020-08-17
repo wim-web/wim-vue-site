@@ -45,7 +45,7 @@
         }
         
         &-main {
-            padding: 8px;
+            padding: 35px 8px;
         }
         
         &-tail {
