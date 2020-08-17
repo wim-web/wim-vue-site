@@ -5,7 +5,7 @@
                     :icon-data="menu.iconData"
                     :text="menu.text"
                     :handle-click="() => handleClickMenu(menu.text, menu.path)"
-                    :is-active="menu.isActive"
+                    :is-active="$route.path === menu.path"
                     :key="menu.text"
             />
         </li>
@@ -23,27 +23,14 @@
         menuList: [
           {text: 'Skill', isActive: true, iconData: ['fas', 'bolt'], path: '/'},
           {text: 'About', isActive: false, iconData: ['far', 'address-card'], path: '/about'},
-          {text: 'Link', isActive: false, iconData: ['fas', 'link'], path: 'link'},
+          {text: 'Link', isActive: false, iconData: ['fas', 'link'], path: '/link'},
         ],
       }
     },
     methods: {
       handleClickMenu(text, path) {
-        this.makeOnlyClickedMenuTrue(text);
-        this.routerPush(path);
-      },
-      makeOnlyClickedMenuTrue(text) {
-        this.menuList = this.menuList.map(menu => {
-          const isActive = menu.text === text;
-          return {
-            ...menu,
-            isActive
-          }
-        });
-      },
-      routerPush(path) {
         this.$router.push(path);
-      }
+      },
     }
   }
 </script>
