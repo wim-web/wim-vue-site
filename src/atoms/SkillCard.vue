@@ -7,7 +7,7 @@
             <div>
                 {{ text }}
             </div>
-            <font-awesome-icon class="icon" :icon="iconData"></font-awesome-icon>
+            <font-awesome-icon class="icon" :icon="iconData" size="lg"></font-awesome-icon>
         </div>
     </div>
 </template>
@@ -49,7 +49,7 @@
         }
         
         &-tail {
-            padding: 5px;
+            padding: 10px;
             background-color: $primary;
             color: whitesmoke;
             border-bottom-left-radius: 10px;
