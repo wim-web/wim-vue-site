@@ -2,32 +2,25 @@ import {createLocalVue, shallowMount} from '@vue/test-utils'
 import MenuBar from "../../../src/components/MenuBar";
 
 describe('MenuBar.vue', () => {
-  it('makeOnlyClickedMenuTrue', () => {
+  it('$router.pushが呼ばれる', () => {
 
-    const wrapper = shallowMount(MenuBar);
+    const $router = {
+      push: jest.fn()
+    };
 
-    const menuList = [
-      {text: 'test1', isActive: false, iconData: [], path: '/test1'},
-      {text: 'test2', isActive: true, iconData: [], path: '/test2'},
-      {text: 'test3', isActive: false, iconData: [], path: '/test3'},
-    ];
+    const $route = {
+      path: ''
+    }
 
-    wrapper.setData({menuList})
+    const wrapper = shallowMount(MenuBar, {
+      mocks: {
+        $router,
+        $route
+      }
+    });
 
-    wrapper.vm.makeOnlyClickedMenuTrue('test1');
+    wrapper.vm.handleClickMenu();
 
-    expect(wrapper.vm.menuList).toEqual([
-      {text: 'test1', isActive: true, iconData: [], path: '/test1'},
-      {text: 'test2', isActive: false, iconData: [], path: '/test2'},
-      {text: 'test3', isActive: false, iconData: [], path: '/test3'},
-    ]);
-
-    wrapper.vm.makeOnlyClickedMenuTrue('test3');
-
-    expect(wrapper.vm.menuList).toEqual([
-      {text: 'test1', isActive: false, iconData: [], path: '/test1'},
-      {text: 'test2', isActive: false, iconData: [], path: '/test2'},
-      {text: 'test3', isActive: true, iconData: [], path: '/test3'},
-    ]);
+    expect($router.push).toHaveBeenCalledTimes(1);
   });
 });
