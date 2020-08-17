@@ -29,6 +29,10 @@
     },
     methods: {
       handleClickMenu(text, path) {
+        this.makeOnlyClickedMenuTrue(text);
+        this.routerPush(path);
+      },
+      makeOnlyClickedMenuTrue(text) {
         this.menuList = this.menuList.map(menu => {
           const isActive = menu.text === text;
           return {
@@ -36,9 +40,10 @@
             isActive
           }
         });
-        
-        this.$router.push(path);
       },
+      routerPush(path) {
+        this.$router.push(path);
+      }
     }
   }
 </script>
