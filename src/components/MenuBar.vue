@@ -4,7 +4,7 @@
             <MenuItem
                     :icon-data="menu.iconData"
                     :text="menu.text"
-                    :handle-click="() => handleClickMenu(menu.text, menu.path)"
+                    :handle-click="() => handleClickMenu(menu.path)"
                     :is-active="$route.path === menu.path"
                     :key="menu.text"
             />
@@ -28,8 +28,10 @@
       }
     },
     methods: {
-      handleClickMenu(text, path) {
-        this.$router.push(path);
+      handleClickMenu(path) {
+        if (this.$route.path !== path) {
+          this.$router.push(path);
+        }
       },
     }
   }
