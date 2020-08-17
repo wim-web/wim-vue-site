@@ -51,6 +51,7 @@
 <style scoped lang="scss">
     .menu-bar {
         display: flex;
+        justify-content: center;
         
         &__item {
             width: 100px;
